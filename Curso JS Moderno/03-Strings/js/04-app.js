@@ -15,5 +15,5 @@ console.log(producto.trimEnd().length);
 // Combinar los métodos - inicio y final
 console.log(producto.trimStart().trimEnd());
 
-// 
+// Eliminar todos los espacios en blanco
 console.log(producto.trim());
