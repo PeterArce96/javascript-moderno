@@ -1,4 +1,6 @@
 // Aunq son archivos diferentes, salta un error porque producto ya ha sido declarado en el 01-app.js y está al mismo nivel o scope que 02-app.js. VAMOS A COMENTAR TODO EL CÓDIGO DEL ARCHIVO ANTERIOR.
+
+// VARIABLE LET
 let producto = 'Tablet';
 
 // Reasignar el valor
