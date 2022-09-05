@@ -8,7 +8,8 @@ const producto = {
     precio: 300,
     disponible: true,
 }
-// La siguiente sentencia se activa con el "use strict", congela el objeto
+// La siguiente sentencia se activa con el "use strict", 
+// freeze() --> congela el objeto
 Object.freeze( producto );
 
 // Provocan error
@@ -17,6 +18,6 @@ Object.freeze( producto );
 // delete producto.precio;
 
 console.log(producto);
-// Como saber si un objeto está congelado y no se puede modificar
+// isFrozen --> Como saber si un objeto está congelado y no se puede modificar.
 console.log(Object.isFrozen(producto));
 
