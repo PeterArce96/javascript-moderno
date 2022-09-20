@@ -1,3 +1,5 @@
+// Eventos - Prevenir Event Bubbling con un método
+
 // Evitar la propagación con contenido creado...
 const parrafo1 = document.createElement('P');
 parrafo1.textContent = 'Concierto';
@@ -13,6 +15,10 @@ parrafo2.classList.add('titulo');
 const parrafo3 = document.createElement('p');
 parrafo3.textContent = '$800 por persona';
 parrafo3.classList.add('precio');
+// LE AGREGAS UNA FUNCION CON EVENTO CLICK
+parrafo3.onclick = function () {
+    nuevaFuncion(1)
+};
 
 // crear el div...
 const info = document.createElement('div');
@@ -38,3 +44,8 @@ contenedorCard.appendChild(info);
 // Insertarlo en el HTML...
 const contenedor = document.querySelector('.hacer .contenedor-cards');
 contenedor.appendChild(contenedorCard); // al inicio info
+
+// FUNCIÓN CREADA
+function nuevaFuncion(id) {
+    console.log('desde nueva Funcion', id);
+}
