@@ -72,6 +72,15 @@ ul {
     border-radius: 10px;
     color: white;
 }
+#carrito a {
+    
+    transition: 0.25s;
+}
+#carrito a:hover {
+    background-color: red;
+    color: white;
+    box-shadow: 0.2rem 0.2rem 0.5rem black;
+}
 .contenido-hero {
     margin-top: 80px;
     color: white;
