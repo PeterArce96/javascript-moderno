@@ -1,5 +1,6 @@
 // Variables
 const btnEnviar = document.querySelector('#enviar');
+const btnReset = document.querySelector('#resetBtn');
 const formulario = document.querySelector('#enviar-mail');
 
 // Variables para campos
@@ -19,6 +20,12 @@ function eventListeners(){
     email.addEventListener('blur', validarFormulario);
     asunto.addEventListener('blur', validarFormulario);
     mensaje.addEventListener('blur', validarFormulario);
+
+    // Reiniciar el formulario
+    btnReset.addEventListener('click', resetearFormulario);
+
+    // Enviar email
+    formulario.addEventListener('submit', enviarEmail);
 }
 
 
@@ -85,6 +92,39 @@ function mostrarError(mensaje) {
     if (errores.length === 0) {
         formulario.appendChild(mensajeError);
     }
+}
 
-    
+// Enviar Email
+function enviarEmail(e) {
+    e.preventDefault();
+
+    // Mostrar el spinner
+    const spinner = document.querySelector('#spinner');
+    spinner.style.display = 'flex';
+
+    // Después de 3s ocultar spinner y mostrar mensaje
+    setTimeout( () => {
+        spinner.style.display = 'none';
+
+        // Mensaje que confirma el envio del mensaje
+        const parrafo = document.createElement('p');
+        parrafo.textContent = '¡El mensaje se envió correctamente!';
+        parrafo.classList.add('text-center', 'my-10', 'p-2', 'bg-green-500', 'text-white', 'font-bold');
+
+        // Inserta el parrafo antes del spinner
+        formulario.insertBefore(parrafo, spinner);
+
+        setTimeout(() => {
+            parrafo.remove(); //eliminar el mensaje de exito
+
+            resetearFormulario();
+        }, 5000);
+
+    }, 3000);
+}
+
+function resetearFormulario() {
+    formulario.reset();
+
+    iniciarApp();
 }
