@@ -46,6 +46,8 @@ ul {
 }
 .submenu {
     position: relative;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .submenu #carrito{
