@@ -51,11 +51,20 @@ function carritoHTML() {
 
     // Recorre el carrito y genera el HTML
     articulosCarrito.forEach( curso => {
+        // destructuring de las llaves para no estar poniendo curso.imagen, curso.titulo, etc.
+        const { imagen, titulo, precio, cantidad, id } = curso;
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>
-                ${curso.titulo}
-            </td>`
+                <img src="${imagen}" width="100">
+            </td>
+            <td>${titulo}</td>
+            <td>${precio}</td>
+            <td>${cantidad}</td>
+            <td>
+                <a href="#" class="borrar-curso" data-id="${id}"> X </a>
+            </td>
+            `
 
         // Agregar el HTML del carrito en el body
         contenedorCarrito.appendChild(row);
