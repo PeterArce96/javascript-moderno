@@ -17,6 +17,11 @@ class Presupuesto{
         this.restante = Number(presupuesto);
         this.gastos = [];
     }
+
+    nuevoGasto(gasto){
+        this.gastos = [...this.gastos, gasto];
+        console.log(this.gastos);
+    }
 }
 
 class UI{
@@ -60,7 +65,7 @@ let presupuesto;
 
 // FUNCIONES
 function preguntarPresupuesto() {
-    const presupuestoUsuario = prompt('¿Cuál es tu presupuesto?');
+    const presupuestoUsuario = prompt('¿Cuál es tu presupuesto mensual?');
     // console.log(Number(presupuestoUsuario)); //convertir a numero
 
     // validar que el presupuesto no esté vacío, cancele, envíe una letra o es número negativo
@@ -82,7 +87,7 @@ function agregarGasto(e) {
 
     // leer los datos del formulario
     const nombre = document.querySelector('#gasto').value;
-    const cantidad = document.querySelector('#cantidad').value;
+    const cantidad = Number(document.querySelector('#cantidad').value);
     // validar
     if (nombre === '' || cantidad === '') {
         ui.imprimirAlerta('Ambos campos son obligatorios', 'error');
@@ -92,5 +97,18 @@ function agregarGasto(e) {
         return;
     }
 
-    console.log('Agregando gasto');
+    // Generar un objeto con el gasto
+    // contrario de destructuring, que separa los atributos del objeto
+    // esta sentencia los une a gasto
+    const gasto = {nombre, cantidad, id: Date.now()}
+
+    // añade un nuevo gasto
+    presupuesto.nuevoGasto(gasto);
+
+    // mensaje, de todo bien
+    ui.imprimirAlerta('Gasto agregado correctamente')
+
+    // reiniciar el formulario
+    formulario.reset();
+
 }
