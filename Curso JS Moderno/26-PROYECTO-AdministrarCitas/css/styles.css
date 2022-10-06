@@ -29,8 +29,8 @@ header h1 {
   padding: 2rem;
   margin-bottom: 0.5rem;
   text-align: center;
-  background: linear-gradient(315deg, #71f1b5 0%, #6bb0ff 100%)
-
+  background: linear-gradient(315deg, #71f1b5 0%, #6bb0ff 100%);
+  border-radius: 1rem;
 }
 .lista-citas .cita:last-of-type {
   border-bottom: 0;
