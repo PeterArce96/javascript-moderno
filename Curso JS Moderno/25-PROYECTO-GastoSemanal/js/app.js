@@ -125,7 +125,7 @@ class UI{
         if(restante <= 0) {
             ui.imprimirAlerta('El presupuesto se ha agotado', 'error');
 
-            formulario.querySelector('button[type= "submit"]').disabled = true;
+            // formulario.querySelector('button[type= "submit"]').disabled = true;
         }
     }
 }
