@@ -15,6 +15,18 @@ body {
   text-transform: uppercase;
   color: white;
 }
+#nueva-cita h2{
+  font-weight: 500;
+  color: #000;
+  text-shadow: 0 0 0.125rem #62ccfb,
+  0 0 0.5rem #62ccfb;
+}
+#administra{
+  font-weight: 500;
+  color: #000;
+  text-shadow: 0 0 0.125rem #62ccfb,
+  0 0 0.5rem #62ccfb;
+}
 .container {
     background-color: white;
 }
