@@ -120,12 +120,13 @@ class UI{
             restanteDiv.classList.remove('alert-danger', 'alert-warning');
             restanteDiv.classList.add('alert-success');
         }
+        formulario.querySelector('button[type="submit"]').disabled = false;
 
         // Si el total es 0 o menor
-        if(restante <= 0) {
+        if(restante < 0) {
             ui.imprimirAlerta('El presupuesto se ha agotado', 'error');
 
-            // formulario.querySelector('button[type= "submit"]').disabled = true;
+            formulario.querySelector('button[type= "submit"]').disabled = true;
         }
     }
 }
