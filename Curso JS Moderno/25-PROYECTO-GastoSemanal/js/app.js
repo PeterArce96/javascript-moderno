@@ -44,7 +44,7 @@ class UI{
             divMensaje.classList.add('alert-success');
         }
 
-        // mensajde de error
+        // mensaje de error
         divMensaje.textContent = mensaje;
 
         // insertar en el html
@@ -54,6 +54,37 @@ class UI{
         setTimeout( () => {
             divMensaje.remove();
         }, 3000)
+    }
+
+    agregarGastoListado(gastos){
+        this.limpiarHTML();
+
+        // iterar sobre los gastos
+        gastos.forEach(gasto => {
+            const { cantidad, nombre, id } = gasto;
+
+            // Crear un li
+            const nuevoGasto = document.createElement('li');
+            nuevoGasto.className = 'list-group-item d-flex justify-content-between align-items-center';
+            nuevoGasto.dataset.id = id;
+
+            // Agregar el HTML del gasto
+            nuevoGasto.innerHTML = ` ${nombre} <span class="badge badge-primary badge-pill"> ${cantidad} </span>`;
+
+            // Boton para borrar gasto
+            const btnBorrar = document.createElement('button');
+            btnBorrar.classList.add('btn', 'btn-danger', 'borrar-gasto');
+            btnBorrar.innerHTML = 'Borrar &times;'
+            nuevoGasto.appendChild(btnBorrar);
+
+            // Agregar al HTML
+            gastoListado.appendChild(nuevoGasto);
+        })
+    }
+    limpiarHTML(){
+        while (gastoListado.firstChild){
+            gastoListado.removeChild(gastoListado.firstChild);
+        }
     }
 }
 
@@ -107,6 +138,10 @@ function agregarGasto(e) {
 
     // mensaje, de todo bien
     ui.imprimirAlerta('Gasto agregado correctamente')
+
+    // Imprimir los gastos
+    const {gastos} = presupuesto;
+    ui.agregarGastoListado(gastos);
 
     // reiniciar el formulario
     formulario.reset();
