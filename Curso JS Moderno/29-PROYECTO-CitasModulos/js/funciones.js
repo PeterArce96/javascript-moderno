@@ -1,3 +1,8 @@
+// Importamos las clases por Default que son utilizadas en las funciones
+import Citas from "./classes/Citas.js";
+import UI from "./classes/UI.js"
+
+import { mascotaInput, propietarioInput, telefonoInput, fechaInput, horaInput, sintomasInput, formulario} from './selectores.js';
 
 const administrarCitas = new Citas();
 const ui = new UI(administrarCitas);

@@ -1,3 +1,9 @@
+
+// importamos las siguientes funciones de funciones.js porque son utilizadas en la clase de UI
+import {eliminarCita, cargarEdicion} from '../funciones.js';
+// importamos contenedorCitas porque es utilizada en el método de imprimirCitas
+import { contenedorCitas, heading } from "../selectores.js";
+
 class UI {
 
     constructor({citas}) {
