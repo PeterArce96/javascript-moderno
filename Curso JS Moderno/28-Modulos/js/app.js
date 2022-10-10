@@ -1,7 +1,9 @@
 // Módulos
 
 // import --> importas la variable nombreCliente de cliente.js
-import {nombreCliente, ahorro, mostrarInformacion, tieneSaldo, Cliente} from './cliente.js'
+// nuevaFuncion --> export por default, va fuera de las llaves
+// las importaciones pueden tener un alias ( as ...)
+import nuevafuncion, {nombreCliente, ahorro, mostrarInformacion, tieneSaldo, Cliente} from './cliente.js'
 import { Empresa } from './empresa.js';
 
 
@@ -23,3 +25,6 @@ console.log(cliente.mostrarInformacion());
 // Importar Empresa
 const empresa = new Empresa ('Código con Juan', 100, 'Aprendizaje en Línea');
 console.log(empresa);
+
+// Importar el default
+nuevafuncion();

@@ -39,3 +39,8 @@ export class Cliente {
         return`Cliente: ${this.nombre} - Ahorro: ${this.ahorro}`;
     }
 }
+
+// Exportar Default, sólo puede haber 1 export default, se exporta como un alias, puede no tener nombre
+export default function nuevaFuncion() {
+    console.log('Este es el export default');
+}
