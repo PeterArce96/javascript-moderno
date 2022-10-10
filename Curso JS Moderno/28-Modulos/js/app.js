@@ -2,6 +2,8 @@
 
 // import --> importas la variable nombreCliente de cliente.js
 import {nombreCliente, ahorro, mostrarInformacion, tieneSaldo, Cliente} from './cliente.js'
+import { Empresa } from './empresa.js';
+
 
 // trae el nombreCliente del archivo cliente.js. Esto puede traer errores al trabajar, ya que se combinan archivos
 console.log(nombreCliente);
@@ -17,3 +19,7 @@ tieneSaldo(ahorro);
 const cliente = new Cliente(nombreCliente, ahorro);
 // llamamos a su método
 console.log(cliente.mostrarInformacion());
+
+// Importar Empresa
+const empresa = new Empresa ('Código con Juan', 100, 'Aprendizaje en Línea');
+console.log(empresa);
