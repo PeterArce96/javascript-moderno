@@ -1,12 +1,19 @@
 // Módulos
 
 // import --> importas la variable nombreCliente de cliente.js
-import {nombreCliente, ahorro, mostrarInformacion, tieneSaldo} from './cliente.js'
+import {nombreCliente, ahorro, mostrarInformacion, tieneSaldo, Cliente} from './cliente.js'
 
 // trae el nombreCliente del archivo cliente.js. Esto puede traer errores al trabajar, ya que se combinan archivos
 console.log(nombreCliente);
 console.log(ahorro);
+
+// importar una funcion
 console.log(mostrarInformacion(nombreCliente, ahorro));
 
 // Se importa automáticamente gracias a VSC, cuando llamas a la function
 tieneSaldo(ahorro);
+
+// importar una clase
+const cliente = new Cliente(nombreCliente, ahorro);
+// llamamos a su método
+console.log(cliente.mostrarInformacion());
