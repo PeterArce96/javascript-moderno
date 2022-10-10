@@ -14,3 +14,16 @@
 export const nombreCliente = 'Juan';
 
 export const ahorro = 200;
+
+// exportar un function
+export function mostrarInformacion(nombre, ahorro) {
+    return `Cliente: ${nombre} - Ahorro: ${ahorro}`;
+}
+
+export function tieneSaldo(ahorro) {
+    if (ahorro > 0) {
+        console.log('Si tienes saldo');
+    } else {
+        console.log('No tiene saldo');
+    }
+}
