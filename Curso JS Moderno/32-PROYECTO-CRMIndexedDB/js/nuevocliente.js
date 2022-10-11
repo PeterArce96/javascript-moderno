@@ -3,10 +3,11 @@
     const formulario = document.querySelector('#formulario');
 
     document.addEventListener('DOMContentLoaded', () => {
+        formulario.addEventListener('submit', validarCliente);
+
         conectarDB();
 
-        formulario.addEventListener('submit', validarCliente);
-    })
+    });
 
     function conectarDB() {
         // conectar a la base de datos creada en app.js
@@ -20,6 +21,7 @@
             DB = abrirConexion.result;
         }
     }
+
 
     function validarCliente(e) {
         e.preventDefault();
@@ -68,34 +70,30 @@
             imprimirAlerta('El Cliente de agregó correctamente!');
 
             setTimeout( () => {
-                window.location.href = 'index.html'
+                window.location.href = 'index.html';
             }, 3000);
-        }
+        };
     }
 
     function imprimirAlerta(mensaje, tipo) {
-
-        const alerta = document.querySelector('.alerta');
-
-        if (!alerta) {
-            // Crear alerta
-            const divMensaje = document.createElement('div');
-            divMensaje.classList.add('px-4', 'py-3', 'rounded', 'max-w-lg', 'mx-auto', 'mt-6', 'text-center', 'border', 'alerta');
-
-            if (tipo === 'error') {
-                divMensaje.classList.add('bg-red-200', 'border-red-400', 'text-red-700');
-            }else {
-                divMensaje.classList.add('bg-green-200', 'border-green-400', 'text-green-700');
-            }
-
-            divMensaje.textContent = mensaje;
-            formulario.appendChild(divMensaje);
-
-            setTimeout(() => {
-                divMensaje.remove();
-            }, 3000)
+    
+        // Crear alerta
+        const divMensaje = document.createElement('div');
+        divMensaje.classList.add('px-4', 'py-3', 'rounded', 'max-w-lg', 'mx-auto', 'mt-6', 'text-center', 'border');
+    
+        if (tipo === 'error') {
+            divMensaje.classList.add('bg-red-200', 'border-red-400', 'text-red-700');
+        }else {
+            divMensaje.classList.add('bg-green-200', 'border-green-400', 'text-green-700');
         }
-
+    
+        divMensaje.textContent = mensaje;
+        formulario.appendChild(divMensaje);
+    
+        setTimeout(() => {
+            divMensaje.remove();
+        }, 3000)
+    
         
     }
 })();
