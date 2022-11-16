@@ -43,7 +43,7 @@ function mostrarAlerta(mensaje) {
 
 function buscarImagenes(termino) {
     const key = '31358842-01d0c7914f282cdfdf6eae111';
-    const url = `https://pixabay.com/api/?key=${key}&q=${termino}`;
+    const url = `https://pixabay.com/api/?key=${key}&q=${termino}&per_page=20`;
 
     fetch(url)
         .then(respuesta => respuesta.json())
@@ -53,5 +53,30 @@ function buscarImagenes(termino) {
 }
 
 function mostrarImagenes(imagenes) {
-    console.log(imagenes);
+    // eliminar resultados previos
+    while (resultado.firstChild) {
+        resultado.removeChild(resultado.firstChild);
+    }
+
+    // iterar sobre el arreglo de imágenes y construir el HTML
+    imagenes.forEach(imagen => {
+        const {previewURL, likes, views, largeImageURL} = imagen;
+
+        resultado.innerHTML += `
+            <div class="w-1/2 md:w-1/3 lg:w-1/4 p-3 mb-4">
+                <div class="bg-white">
+                    <img class="w-full" src="${previewURL}" />
+
+                    <div class="p-4 text-center">
+                        <p class="font-bold">${likes} <span class="font-light">Me gusta</span></p>
+                        <p class="font-bold">${views} <span class="font-light">Vistas</span></p>
+                        <a class="block w-full bg-blue-800 hover:bg-blue-500 text-white uppercase font-bold text-center rounded mt-5 p-1" href="${largeImageURL}" target="_blank" rel="noopener noreferrer">
+                            Ver Imagen
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        `;
+    });
 }
