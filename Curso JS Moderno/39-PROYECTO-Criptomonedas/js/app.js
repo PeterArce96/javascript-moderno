@@ -42,11 +42,10 @@ function selectCriptomonedas(criptomonedas) {
 
 function leerValor(e) {
     objBusqueda[e.target.name] = e.target.value;
-    console.log(objBusqueda);
 }
 
 function submitFormulario(e) {
-    e.PreventDefault();
+    e.preventDefault();
 
     // validar
     const {moneda, criptomoneda} = objBusqueda;
@@ -55,8 +54,25 @@ function submitFormulario(e) {
         mostrarAlerta('Ambos campos son obligatorios');
         return;
     }
+
+    // Consultar la API con los resultados
 }
 
 function mostrarAlerta(msg) {
-    console.log(msg);
+
+    const existeError = document.querySelector('.error');
+    if (!existeError) {
+        const divMensaje = document.createElement('DIV');
+        divMensaje.classList.add('error');
+
+        // mensaje de error
+        divMensaje.textContent = msg;
+
+        formulario.appendChild(divMensaje);
+
+        setTimeout(() => {
+            divMensaje.remove();
+        }, 3000);
+    }
+    
 }
