@@ -101,16 +101,16 @@ function mostrarCotizacionHTML(cotizacion) {
     precio.innerHTML = `El precio es: <span>${PRICE}</span>`;
 
     const precioAlto = document.createElement('P');
-    precioAlto.innerHTML = `<p>Precio más alto del día: <span>${HIGHDAY}</span></p>`;
+    precioAlto.innerHTML = `<p>• Precio más alto del día: <span>${HIGHDAY}</span></p>`;
 
     const precioBajo = document.createElement('P');
-    precioBajo.innerHTML = `<p>Precio más bajo del día: <span>${LOWDAY}</span></p>`;
+    precioBajo.innerHTML = `<p>• Precio más bajo del día: <span>${LOWDAY}</span></p>`;
     
     const ultimasHoras = document.createElement('P');
-    ultimasHoras.innerHTML = `<p>Variación últimas 24 horas: <span>${CHANGEPCT24HOUR}%</span></p>`;
+    ultimasHoras.innerHTML = `<p>• Variación últimas 24 horas: <span>${CHANGEPCT24HOUR}%</span></p>`;
 
     const ultimaActualizacion = document.createElement('P');
-    ultimaActualizacion.innerHTML = `<p>Última Actualización: <span>${LASTUPDATE}</span></p>`;
+    ultimaActualizacion.innerHTML = `<p>• Última Actualización: <span>${LASTUPDATE}</span></p>`;
 
     resultado.appendChild(precio);
     resultado.appendChild(precioAlto);
