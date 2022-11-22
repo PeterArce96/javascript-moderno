@@ -2,7 +2,7 @@
 let cliente = {
     mesa: '',
     hora: '',
-    pedido: []
+    pedido: [],
 };
 
 const btnGuardarCliente = document.querySelector('#guardar-cliente');
@@ -31,8 +31,13 @@ function guardarCliente() {
         }
 
         return;
-        
-    } 
-        console.log('No hay campos vacios');
-    
+    }
+    // Asignar datos del formulario al cliente
+    cliente = { ...cliente, mesa, hora }
+    // console.log(cliente);
+
+    // ocultar modal
+    const modalFormulario = document.querySelector('#formulario');
+    const modalBootstrap = bootstrap.Modal.getInstance(modalFormulario);
+    modalBootstrap.hide();
 }
