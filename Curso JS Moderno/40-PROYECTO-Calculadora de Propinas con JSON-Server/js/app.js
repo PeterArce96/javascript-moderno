@@ -1,3 +1,5 @@
+// Comando para activar la base de datos de json server
+// json-server --watch db.json --port 4000
 
 let cliente = {
     mesa: '',
