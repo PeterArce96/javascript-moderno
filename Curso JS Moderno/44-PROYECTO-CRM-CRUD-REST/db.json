@@ -1,5 +1,18 @@
 {
   "clientes": [
-  
+    {
+      "nombre": "Juan",
+      "email": "correo@correo.com",
+      "telefono": "28738378",
+      "empresa": "IIGV",
+      "id": 1
+    },
+    {
+      "nombre": "Peter",
+      "email": "peter@gmail.com",
+      "telefono": "937373737",
+      "empresa": "UTP",
+      "id": 2
+    }
   ]
 }
