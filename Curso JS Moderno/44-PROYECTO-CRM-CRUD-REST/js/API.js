@@ -1,4 +1,8 @@
-
+/*
+Para activar el json server
+1.- Ingresar en el git bash a la carpeta del proyecto: cd 44-PROYECTO-CRM-CRUD-REST
+2.- Ingresar: json-server db.json -p 4000
+*/
 const url = 'http://localhost:4000/clientes';
 
 // Cuando se crea un nuevo cliente
