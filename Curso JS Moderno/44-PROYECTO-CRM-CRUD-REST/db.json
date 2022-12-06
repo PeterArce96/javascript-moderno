@@ -2,7 +2,7 @@
   "clientes": [
     {
       "nombre": "Juan",
-      "email": "correo@correo.com",
+      "email": "juan@correo.com",
       "telefono": "28738378",
       "empresa": "IIGV",
       "id": 1
