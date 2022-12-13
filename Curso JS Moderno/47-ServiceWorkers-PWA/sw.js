@@ -1,9 +1,26 @@
 
+
+const nombreCache = 'apv-v1';
+const archivos = [
+    '/',
+    './index.html',
+    './css/bootstrap.css',
+    './css/styles.css',
+    './js/app.js',
+    './js/apv.js'
+];
+
 // Cuando se instala el service worker
 self.addEventListener('install', e => {
     console.log('Instalado el service worker');
 
-    console.log(e);
+    e.waitUntil(
+        caches.open(nombreCache)
+            .then(cache => {
+                console.log('cacheando');
+                cache.addAll(archivos)
+            })
+    )
 })
 
 // En la consola dle navegador se lee el mensaje de "Instalado el service worker" y el InstallEvent. Esto solo se ejecuta una vez, si recargamos podemos ver que no vuelve a salir.
