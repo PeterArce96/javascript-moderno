@@ -126,7 +126,7 @@ function mostrarCotizacionHTML(cotizacion) {
     const  { PRICE, HIGHDAY, LOWDAY, CHANGEPCT24HOUR, LASTUPDATE } = cotizacion;
 
 
-    debugger;
+    // debugger; //detiene la ejecución y muestra las variables a esas alturas
 
     const precio = document.createElement('p');
     precio.classList.add('precio');
@@ -144,7 +144,7 @@ function mostrarCotizacionHTML(cotizacion) {
     const ultimaActualizacion = document.createElement('p');
     ultimaActualizacion.innerHTML = `<p>Última Actualización: <span>${LASTUPDATE}</span></p>`;
 
-    debugger;
+    debugger; //puedes ponerlo abajo para verificar las variables que se muestran después
 
     resultado.appendChild(precio);
     resultado.appendChild(precioAlto);
