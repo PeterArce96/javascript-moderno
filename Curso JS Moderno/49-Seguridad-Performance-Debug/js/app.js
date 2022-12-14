@@ -144,7 +144,7 @@ function mostrarCotizacionHTML(cotizacion) {
     const ultimaActualizacion = document.createElement('p');
     ultimaActualizacion.innerHTML = `<p>Última Actualización: <span>${LASTUPDATE}</span></p>`;
 
-    debugger; //puedes ponerlo abajo para verificar las variables que se muestran después
+    // debugger; //puedes ponerlo abajo para verificar las variables que se muestran después
 
     resultado.appendChild(precio);
     resultado.appendChild(precioAlto);
