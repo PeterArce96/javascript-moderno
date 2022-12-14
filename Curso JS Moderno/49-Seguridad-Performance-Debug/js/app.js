@@ -37,15 +37,30 @@ function consultarCriptomonedas() {
 // llena el select 
 function selectCriptomonedas(criptomonedas) {
 
-    criptomonedas.forEach( cripto => {
-        const { FullName, Name } = cripto.CoinInfo;
-        const option = document.createElement('option');
-        option.value = Name;
-        option.textContent = FullName;
-        // insertar el HTML
-        criptomonedasSelect.appendChild(option);
-    });
+    // CONOCER EL TIEMPO DE EJECUCIÓN, inicio y fin después de lo que quieres calcular
+    const inicio = performance.now();
 
+    // criptomonedas.forEach( cripto => {
+    //     const { FullName, Name } = cripto.CoinInfo;
+    //     const option = document.createElement('option');
+    //     option.value = Name;
+    //     option.textContent = FullName;
+    //     // insertar el HTML
+    //     criptomonedasSelect.appendChild(option);
+    // });
+
+    // Un for es más rápido que el forEach
+    for (let i = 0; i < criptomonedas.length; i++) {
+            const { FullName, Name } = criptomonedas[i].CoinInfo;
+            const option = document.createElement('option');
+            option.value = Name;
+            option.textContent = FullName;
+            // insertar el HTML
+            criptomonedasSelect.appendChild(option);
+    }
+
+    const fin = performance.now();
+    console.log(fin-inicio);
 }
 
 
