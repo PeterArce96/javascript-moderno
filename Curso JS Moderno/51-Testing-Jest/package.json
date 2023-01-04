@@ -9,6 +9,7 @@
   "author": "Peter Arce",
   "license": "ISC",
   "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
     "jest": "^29.3.1"
   }
 }
